@@ -28,11 +28,11 @@ resource "aws_security_group" "web_sg" {
 resource "aws_instance" "web" {
     ami = data.aws_ami.amazon_linux_2.id
     instance_type = "t2.micro"
-    security_groups = [aws_security_group.web_sg.id]
+//    security_groups = [aws_security_group.web_sg.id]
 //    user_data = file("bootstrap.sh")
     tags = {
         Name = "Mossy"
         Type = "web"
     }
-    depends_on = [aws_security_group.web_sg]
+//    depends_on = [aws_security_group.web_sg]
 } 
