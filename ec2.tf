@@ -8,7 +8,7 @@ data "aws_ami" "amazon_linux_2" {
     ]
     filter {
         name = "name"
-        values = ["amzn2-ami-hvm-2.0.*-arm64-gp2"]
+        values = ["*Amazon Linux 2*"]
     }
     most_recent = true
 }
