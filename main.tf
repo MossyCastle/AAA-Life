@@ -15,7 +15,7 @@ resource aws_vpc "hashicat" {
   // name = "mossy-terraform"
     tags = {
     Name = "terraform test"
-    mainvpc = 
+    
   }
 }
 
