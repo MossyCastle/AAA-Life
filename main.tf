@@ -19,7 +19,7 @@ resource aws_vpc "hashicat" {
   }
 }
 
-resource "aws_subnet" Main-subnet"{
+resource aws_subnet "Main-subnet"{
    vpc_id = aws_vpc.hashicat.id    
    subnet = "10.1.1.0/24"
 }
