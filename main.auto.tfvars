@@ -11,18 +11,11 @@
 
 
    
-   region     = "us-east-1"
-/*
-variable "address_space" {
- // description = "The address space that is used by the virtual network. You can supply more than one address space. Changing this forces a new resource to be created."
+  region     = "us-east-1"
   address_space     = "10.0.0.0/16"
-}
-
-variable "subnet_prefix" {
-//  description = "The address prefix to use for the subnet."
   subnet_prefix     = "10.0.10.0/24"
-}
 
+/*
 variable "instance_type" {
 //  description = "Specifies the AWS instance type."
   instance_type    = "t2.micro"
