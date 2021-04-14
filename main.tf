@@ -15,11 +15,11 @@ resource aws_vpc "hashicat" {
   // name = "mossy-terraform"
     tags = {
     Name = "terraform test"
-    mainvpc = vpc.id    
+    mainvpc = 
   }
 }
 
 resource "aws_subnet" Main-subnet"{
-   vpc_id  
+   vpc_id = aws_vpc.hashicat.id    
    subnet = "10.1.1.0/24"
 }
