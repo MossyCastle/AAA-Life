@@ -21,5 +21,8 @@ resource aws_vpc "hashicat" {
 
 resource aws_subnet "Main-subnet"{
    vpc_id = aws_vpc.hashicat.id    
-   cidr_block = "10.1.1.0/24"
+   cidr_block = "10.0.1.0/24"
+  tags {
+    name = terraform-subnet"
+}
 }
