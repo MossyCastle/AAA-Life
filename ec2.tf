@@ -22,7 +22,7 @@ resource "aws_security_group" "web_sg" {
         Name = "web_sg"
     }
 }
-
+/*
 resource "aws_instance" "web" {
     ami = data.aws_ami.amazon_linux_2.id
     instance_type = "t2.micro"
@@ -34,3 +34,4 @@ resource "aws_instance" "web" {
     }
 //    depends_on = [aws_security_group.web_sg]
 } 
+*/
