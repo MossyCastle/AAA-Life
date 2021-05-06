@@ -18,6 +18,26 @@ resource aws_vpc "eks-vpc" {
 */
 
 // build subnets and such
+variable "region" {
+  default     = "us-east-2"
+  description = "AWS region"
+}
+
+provider "aws" {
+  region = "us-east-2"
+}
+
+data "aws_availability_zones" "available" {}
+
+locals {
+  cluster_name = "education-eks-${random_string.suffix.result}"
+}
+
+resource "random_string" "suffix" {
+  length  = 8
+  special = false
+}
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.66.0"
