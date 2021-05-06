@@ -6,7 +6,7 @@
 #   in attempt to ensure that the same policy gets set across all places that it is used
 
 //Create ECR role
-esource "aws_iam_user" "ecr-user" {
+resource "aws_iam_user" "ecr-user" {
   name = "ecr-user"
   tags = {
     contact = "mossycastle@gmail.com"
