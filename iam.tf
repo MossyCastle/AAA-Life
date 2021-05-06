@@ -4,6 +4,22 @@
 #   This module defines the IAM Password policy for the accounts
 #   The policy is defined within the aws-set-iam-account-password-policy module
 #   in attempt to ensure that the same policy gets set across all places that it is used
+
+//Create ECR role
+esource "aws_iam_user" "ecr-user" {
+  name = "ecr-user"
+  tags = {
+    contact = "mossycastle@gmail.com"
+  }
+  provider = aws.origin
+}
+
+resource "aws_iam_user_policy_attachment" "attach-lecr-user" {
+  user       = aws_iam_user.ecr-user.name
+  policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+  provider = aws.origin
+}
+
 /*
 module "aws-set-iam-account-password-policy" {
   source  = "terraform.aaalife.com/AAALife/set-iam-account-password-policy/aws"
