@@ -11,13 +11,11 @@ resource "aws_iam_user" "ecr-user" {
   tags = {
     contact = "mossycastle@gmail.com"
   }
-  //provider = aws.origin
 }
 
 resource "aws_iam_user_policy_attachment" "attach-lecr-user" {
   user       = aws_iam_user.ecr-user.name
-  policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
-  //provider = aws.origin
+  policy_arn = "arn:aws:iam::aws:policy/AmazonElasticContainerRegistryPublicPowerUser"
 }
 
 /*
